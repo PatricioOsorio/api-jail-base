@@ -1,0 +1,70 @@
+:root {
+  --font-main: 'Crimson Pro', serif;
+  --container-width: 1200px;
+  --radius: 10px;
+  --easeInOut: cubic-bezier(0.39, 0.57, 0.56, 1);
+
+  --background: #ececec;
+  --foreground-primary: #fafafa;
+  --foreground-secondary: #f0f0f0;
+  --text-color-thick: #1f1f1f;
+  --text-color-regular: #434343;
+  --text-color-thin: #676767;
+  --text-color-ultrathin: #8c8c8c;
+  --shadow-color: #e4e4e4;
+  --primary: #007aff;
+  --second: #1787ff;
+
+  --success: #01c851;
+  --danger: #fe4443;
+  --warning: #ffbb33;
+  --info: #33b5e7;
+}
+
+.dark-mode {
+  --background: #181719;
+  --foreground-primary: #27242c;
+  --foreground-secondary: #3d3a41;
+  --text-color-thick: #ffffff;
+  --text-color-regular: #f6f6f6;
+  --text-color-thin: #c2c2c2;
+  --text-color-ultrathin: #bbbbbb;
+  --shadow-color: #161616;
+  --primary: #0a84ff;
+  --second: #1787ff;
+
+  --success: #017e34;
+  --danger: #cc0000;
+  --warning: #ff8801;
+  --info: #0099cc;
+}
+
+html {
+  background-color: var(--background);
+  font-family: var(--font-main);
+  color: var(--text-color-regular);
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CONTENT HTML */
+body {
+  background-image: url(/);
+}
+

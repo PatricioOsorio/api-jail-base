@@ -5,10 +5,10 @@ export default function primer() {
     try {
       const options = {
         method: 'GET',
-        mode: 'no-cors',
+        mode: 'cors',
         headers: new Headers({
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Origin': 'https://patricioosorio.github.io/',
         }),
       };
       let res = await fetch('https://www.jailbase.com/api/1/sources/', options);

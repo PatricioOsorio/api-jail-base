@@ -5,7 +5,7 @@ export default function primer() {
     try {
       const options = {
         method: 'GET',
-        mode: 'cors',
+        mode: 'no-cors',
         headers: new Headers({
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': 'https://patricioosorio.github.io/',

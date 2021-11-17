@@ -1,4 +1,6 @@
 export default async function requestRecent(sourceId) {
+  const $error = document.querySelector('.error');
+
   try {
     let res = await fetch(
       `http://www.JailBase.com/api/1/recent/?source_id=${sourceId}`
@@ -9,5 +11,10 @@ export default async function requestRecent(sourceId) {
   } catch (err) {
     let message = err.statusText || 'Ocurrio un error';
     console.error(`Failed Connection : ${err.status}: ${message}`);
+
+    $error.classList.remove('hidden');
+    setTimeout(() => {
+      $error.classList.add('hidden');
+    }, 3000);
   }
 }

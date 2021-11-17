@@ -23,8 +23,10 @@
   <body>
     <header class="header">
       <div class="header__content">
-        <a href="#"><img src="assets/icons/station.svg" alt="Logotipo" /></a>
-        <nav class="menu">
+        <a class="header__logo" href="#"
+          ><img src="assets/icons/station.svg" alt="Logotipo"
+        /></a>
+        <nav class="header__menu">
           <a href="#estado">Buscar por condado</a>
           <a href="#recluso">Buscar recluso</a>
         </nav>
@@ -32,6 +34,7 @@
     </header>
     <main class="main">
       <h1 class="title">JailBase</h1>
+
       <section class="section" id="estado">
         <h2>Buscar por Estado</h2>
 
@@ -54,9 +57,33 @@
 
         <div class="estado__info"></div>
       </section>
+
       <section class="section" id="recluso">
         <h2>Buscar por recluso</h2>
+
+        <div class="recluso__form">
+          <label for="recluso__state">Estado</label>
+          <select name="recluso__state" id="recluso__state">
+            <option value="opcion">--Seleccione opcion</option>
+          </select>
+
+          <label for="recluso__county">Condado</label>
+          <select name="recluso__county" id="recluso__county">
+            <option value="opcion">--Seleccione opcion</option>
+          </select>
+
+          <label for="recluse__person">Apellido</label>
+          <input
+            id="recluse__person"
+            type="text"
+            required
+            placeholder="Apellido"
+          />
+
+          <button class="btn recluso__btn">Consultar</button>
+        </div>
       </section>
+
       <template class="template-card">
         <div class="card">
           <img class="card__img" src="" alt="Recluso" />
@@ -65,6 +92,13 @@
           <p>Fecha captura: <span class="card__date"></span></p>
         </div>
       </template>
+
+      <div class="error hidden">
+        <p>
+          <i class="fas fa-exclamation-circle"></i>
+          Error: datos no disponibles
+        </p>
+      </div>
     </main>
     <footer class="footer"></footer>
   </body>

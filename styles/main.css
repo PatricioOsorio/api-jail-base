@@ -153,7 +153,8 @@ body {
   margin-top: 2rem;
   padding: 1rem;
   width: 100%;
-  min-height: 100vh;
+  min-height: 600px;
+  max-height: 100vh;
   color: var(--text-color-regular);
   background-color: var(--foreground-primary);
   animation: var(--animation-fade-in);

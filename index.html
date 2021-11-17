@@ -19,6 +19,7 @@
       crossorigin="anonymous"
       async
     ></script>
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <header class="header">
@@ -61,7 +62,7 @@
       <section class="section" id="recluso">
         <h2>Buscar por recluso</h2>
 
-        <div class="recluso__form">
+        <form class="recluso__form">
           <label for="recluso__state">Estado</label>
           <select name="recluso__state" id="recluso__state">
             <option value="opcion">--Seleccione opcion</option>
@@ -72,19 +73,34 @@
             <option value="opcion">--Seleccione opcion</option>
           </select>
 
-          <label for="recluse__person">Apellido</label>
+          <input type="hidden" name="id" class="recluso__id">
+
+          <label for="recluso__last-name">Apellido</label>
           <input
-            id="recluse__person"
+            id="recluso__last-name"
             type="text"
             required
             placeholder="Apellido"
           />
 
           <button class="btn recluso__btn">Consultar</button>
+          <!-- <input class="btn recluso__btn" type="button" value="Consultar"> -->
+        </form>
+        <div class="recluso__info">
+
         </div>
       </section>
 
       <template class="template-card">
+        <div class="card">
+          <img class="card__img" src="" alt="Recluso" />
+          <p>Nombre: <span class="card__name"></span></p>
+          <p>Cargos: <span class="card__charges"></span></p>
+          <p>Fecha captura: <span class="card__date"></span></p>
+        </div>
+      </template>
+
+      <template class="template-search">
         <div class="card">
           <img class="card__img" src="" alt="Recluso" />
           <p>Nombre: <span class="card__name"></span></p>

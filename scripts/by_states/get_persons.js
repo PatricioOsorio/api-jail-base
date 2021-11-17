@@ -1,7 +1,7 @@
-import requestRecent from './requestRecent.js';
+import requestRecent from '../requestRecent.js';
 
 const d = document;
-export default async function getPersons(e) {
+export default async function getPersonsEstado(e) {
   let $persons = d.getElementById('persons');
   let $fragment = d.createDocumentFragment();
 

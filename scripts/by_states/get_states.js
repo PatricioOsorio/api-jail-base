@@ -1,6 +1,8 @@
 const d = document;
 export default async function getStates(res) {
-  let $state = d.getElementById('state');
+  let $stateEstado = d.getElementById('state');
+  let $stateRecluso = d.getElementById('recluso__state');
+
   let $fragment = d.createDocumentFragment();
 
   const records = res.records;
@@ -18,6 +20,9 @@ export default async function getStates(res) {
     $option.value = el;
     $fragment.appendChild($option);
   });
+  
+  let $fragment2 = $fragment.cloneNode(true);
 
-  $state.appendChild($fragment);
+  $stateEstado.appendChild($fragment);
+  $stateRecluso.appendChild($fragment2);
 }

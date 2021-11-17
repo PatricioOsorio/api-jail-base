@@ -1,7 +1,7 @@
-import requestRecent from './requestRecent.js';
+import requestRecent from '../requestRecent.js';
 
 const d = document;
-export default async function getPerson(e) {
+export default async function getPersonEstado(e) {
   let $county = d.getElementById('county');
   let $fragment = d.createDocumentFragment();
   const $template = d.querySelector('.template-card').content;
@@ -9,7 +9,7 @@ export default async function getPerson(e) {
 
   $estado.textContent = "";
 
-  const idSearch = county.value; // id reclusorio a buscar
+  const idSearch = $county.value; // id reclusorio a buscar
   const index = e.target.value; // index del que lo originó
 
   const res = await requestRecent(idSearch);

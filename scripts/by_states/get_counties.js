@@ -1,5 +1,5 @@
 const d = document;
-export default async function getCounties(res, e) {
+export default async function getCountiesEstado(res, e) {
   let $county = d.getElementById('county');
   let $fragment = d.createDocumentFragment();
 

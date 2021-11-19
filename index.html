@@ -2,9 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>JailBase</title>
+    <title>JailBase - Product</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="styles/normalize.min.css.map" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +18,11 @@
       crossorigin="anonymous"
       async
     ></script>
-    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <header class="header">
@@ -28,13 +31,26 @@
           ><img src="assets/icons/station.svg" alt="Logotipo"
         /></a>
         <nav class="header__menu">
-          <a href="#estado">Buscar por condado</a>
-          <a href="#recluso">Buscar recluso</a>
+          <a href="#"><i class="fas fa-home"></i>Inicio</a>
+          <a href="#estado"><i class="fas fa-search"></i>Buscar por condado</a>
+          <a href="#recluso"><i class="fas fa-search"></i>Buscar recluso</a>
         </nav>
       </div>
     </header>
     <main class="main">
-      <h1 class="title">JailBase</h1>
+      <div class="hero">
+        <div class="filter__black">
+          <h1 class="hero__title">JailBase</h1>
+          <p>
+            <strong>Web api :</strong>
+            <a href="https://www.jailbase.com/api/" target="_target"
+              >jailbase</a
+            >
+          </p>
+          <p><strong>Materia</strong>: Servicios web</p>
+          <p><strong>Cuatrimestre</strong>: Septiembre – diciembre 2021</p>
+        </div>
+      </div>
 
       <section class="section" id="estado">
         <h2>Buscar por Estado</h2>
@@ -73,7 +89,7 @@
             <option value="opcion">--Seleccione opcion</option>
           </select>
 
-          <input type="hidden" name="id" class="recluso__id">
+          <input type="hidden" name="id" class="recluso__id" />
 
           <label for="recluso__last-name">Apellido</label>
           <input
@@ -85,9 +101,7 @@
 
           <button class="btn recluso__btn">Consultar</button>
         </form>
-        <div class="recluso__info">
-
-        </div>
+        <div class="recluso__info"></div>
       </section>
 
       <template class="template-card">
@@ -115,6 +129,10 @@
         </p>
       </div>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__content">
+        <p>Consumo de API - JailBase - 2021</p>
+      </div>
+    </footer>
   </body>
 </html>

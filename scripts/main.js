@@ -15,9 +15,6 @@ d.addEventListener('DOMContentLoaded', async (e) => {
 
   const $stateRecluso = d.getElementById('recluso__state');
   const $countyRecluso = d.getElementById('recluso__county');
-  const $personsRecluso = d.getElementById('recluse__last-name');
-  const $btnRecluso = d.querySelector('.recluso__btn');
-
   const $reclusoForm = d.querySelector('.recluso__form');
 
   const res = await requestSources(); // Peticion Organizaciones

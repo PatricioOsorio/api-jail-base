@@ -1,8 +1,15 @@
 export default async function requestSources() {
   const $error = document.querySelector('.error');
-  
+
   try {
-    let res = await fetch('https://www.jailbase.com/api/1/sources/');
+    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+    const url = 'https://www.jailbase.com/api/1/sources/';
+    const header = new Headers({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    });
+
+    let res = await fetch(corsAnywhere + url, header);
     let json = await (res.ok ? res.json() : Promise.reject(res));
 
     return json;

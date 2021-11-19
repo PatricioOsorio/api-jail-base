@@ -2,9 +2,14 @@ export default async function requestSeach(sourceId, lastName) {
   const $error = document.querySelector('.error');
 
   try {
-    let res = await fetch(
-      `http://www.JailBase.com/api/1/search/?source_id=${sourceId}&last_name=${lastName}`
-    );
+    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+    const url = `http://www.JailBase.com/api/1/search/?source_id=${sourceId}&last_name=${lastName}`;
+    const header = new Headers({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    });
+
+    let res = await fetch(corsAnywhere + url, header);
     let json = await (res.ok ? res.json() : Promise.reject(res));
 
     return json;

@@ -1,11 +1,10 @@
 import requestSeach from '../requestSearch.js';
 
 const d = document;
-export default async function getPersonsRecluso(e) {
-  let $county = d.getElementById('county');
+export default async function getPersonsRecluse(e) {
   const $reclusoInfo = d.querySelector('.recluso__info');
-  let $fragment = d.createDocumentFragment();
   const $reclusoForm = d.querySelector('.recluso__form');
+  const $fragment = d.createDocumentFragment();
   const $template = d.querySelector('.template-search').content;
 
   $reclusoInfo.textContent = '';
@@ -13,15 +12,16 @@ export default async function getPersonsRecluso(e) {
   const idSearch = $reclusoForm.querySelector('.recluso__id').dataset.id;
   const lastName = $reclusoForm.querySelector('#recluso__last-name').value;
 
-  console.log(idSearch, lastName);
+  // console.log(idSearch, lastName);
 
   const res = await requestSeach(idSearch, lastName);
   const recordsPersons = await res.records;
 
   console.log(recordsPersons);
 
+  // Si no se encuentra persona
   if (recordsPersons.length === 0) {
-    alert('No se encontró persona"');
+    alert('No se encontró la persona');
   } else {
     recordsPersons.forEach((el) => {
       console.log(el);

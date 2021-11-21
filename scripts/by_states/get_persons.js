@@ -2,19 +2,17 @@ import requestRecent from '../requestRecent.js';
 
 const d = document;
 export default async function getPersonsEstado(e) {
-  let $persons = d.getElementById('persons');
-  let $fragment = d.createDocumentFragment();
+  const $persons = d.getElementById('persons');
+  const $fragment = d.createDocumentFragment();
 
   $persons.textContent = '';
-  console.log('Obteniendo personas...');
 
   const idSearch = e.target.value;
-  console.log(`idSearch: "${idSearch}"`);
+  // console.log(`idSearch: "${idSearch}"`);
 
   const res = await requestRecent(idSearch);
-  let recordsPersons = await res.records;
-
-  console.log(recordsPersons);
+  const recordsPersons = await res.records;
+  // console.log(recordsPersons);
 
   recordsPersons.forEach((el,i) => {
     const $option = d.createElement('option');

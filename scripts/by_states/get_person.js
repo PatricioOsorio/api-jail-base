@@ -2,8 +2,8 @@ import requestRecent from '../requestRecent.js';
 
 const d = document;
 export default async function getPersonEstado(e) {
-  let $county = d.getElementById('county');
-  let $fragment = d.createDocumentFragment();
+  const $county = d.getElementById('county');
+  const $fragment = d.createDocumentFragment();
   const $template = d.querySelector('.template-card').content;
   const $estado = d.querySelector('.estado__info');
 
@@ -20,12 +20,12 @@ export default async function getPersonEstado(e) {
 
   $template.querySelector('.card__img').src = person.mugshot;
   $template.querySelector('.card__name').textContent = person.name;
-  $template.querySelector('.card__charges').textContent = person.charges.length == 0 
+  $template.querySelector('.card__charges').textContent = person.charges.length === 0 
     ? 'No disponible' 
     : person.charges;
   $template.querySelector('.card__date').textContent = person.book_date_formatted;
 
-  let $clone = d.importNode($template, true);
+  const $clone = d.importNode($template, true);
   $fragment.appendChild($clone);
 
   $estado.appendChild($fragment);

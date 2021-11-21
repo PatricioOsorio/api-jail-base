@@ -1,13 +1,13 @@
 const d = document;
 export default async function getCountiesEstado(res, e) {
-  let $county = d.getElementById('county');
-  let $fragment = d.createDocumentFragment();
+  const $county = d.getElementById('county');
+  const $fragment = d.createDocumentFragment();
 
   const records = await res.records;
 
   $county.textContent = '';
-  console.log('Obteniendo condados...');
 
+  // Filtrado, para obtener Condados y su id
   const counties = [];
   records.forEach((el) => {
     if (e.target.value === el.state_full) {
@@ -15,6 +15,15 @@ export default async function getCountiesEstado(res, e) {
     }
   });
 
+  // Se crean las opciones para el "Dropdown list"
+
+  // Mensaje para seleccionar opcion
+  const $option = d.createElement('option');
+  $option.textContent = '--Seleccione opcion';
+  $option.value = undefined;
+  $fragment.appendChild($option);
+
+  // Llenado con los condados
   counties.forEach((el) => {
     const $option = d.createElement('option');
     $option.textContent = el[0]; // Muestro el condado
@@ -22,5 +31,6 @@ export default async function getCountiesEstado(res, e) {
     $fragment.appendChild($option);
   });
 
+  // Se agregan al HTML
   $county.appendChild($fragment);
 }

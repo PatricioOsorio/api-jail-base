@@ -5,12 +5,12 @@ export default async function requestSources() {
     const corsAnywhere = 'https://mycors-jailbase.herokuapp.com/';
     const url = 'https://www.jailbase.com/api/1/sources/';
 
-    let res = await fetch(corsAnywhere + url);
-    let json = await (res.ok ? res.json() : Promise.reject(res));
+    const res = await fetch(corsAnywhere + url);
+    const json = await (res.ok ? res.json() : Promise.reject(res));
 
     return json;
   } catch (err) {
-    let message = err.statusText || 'Ocurrio un error';
+    const message = err.statusText || 'Ocurrio un error';
     console.error(`Failed Connection : ${err.status}: ${message}`);
     showError();
   }

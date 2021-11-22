@@ -57,7 +57,7 @@ i {
   padding-right: 0.5rem;
 }
 
-/* CONTENT HTML */
+/* Contenido HTML */
 body {
   margin: 0;
   background-image: url('../assets/images/img\ \(2\).jpg');
@@ -244,6 +244,7 @@ body {
   background-color: var(--glass);
   text-align: center;
 }
+
 /* ! Animaciones */
 @keyframes tracking-in-expand {
   0% {

@@ -1,13 +1,13 @@
 const d = document;
 export default async function getCountiesEstado(res, e) {
-  const $county = d.getElementById('county');
-  const $fragment = d.createDocumentFragment();
+  const $county = d.getElementById('county'); // Obtener el condado (HTML)
+  const $fragment = d.createDocumentFragment(); // Fragmento para guardar el contenido
 
-  const records = await res.records;
+  const records = await res.records; // Espera "records" de la respuesta Json 
 
-  $county.textContent = '';
+  $county.textContent = ''; // Limpia el HTML, para que no se repitan
 
-  // Filtrado, para obtener Condados y su id
+  // Filtrado, para obtener Condados y Id
   const counties = [];
   records.forEach((el) => {
     if (e.target.value === el.state_full) {
@@ -16,7 +16,6 @@ export default async function getCountiesEstado(res, e) {
   });
 
   // Se crean las opciones para el "Dropdown list"
-
   // Mensaje para seleccionar opcion
   const $option = d.createElement('option');
   $option.textContent = '--Seleccione opcion';

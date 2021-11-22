@@ -1,13 +1,13 @@
 const d = document;
 export default async function getCountiesRecluso(res, e) {
-  const $county = d.getElementById('recluso__county');
-  const $fragment = d.createDocumentFragment();
+  const $county = d.getElementById('recluso__county'); // Condado (busqueda por recluso)
+  const $fragment = d.createDocumentFragment(); // Fragmento para ser llenado
 
-  const records = await res.records;
+  const records = await res.records; // De la peticion, espera "records"
 
-  $county.textContent = '';
+  $county.textContent = ''; // Se limpia el contenido, para que no se repitan
 
-  // Filtrado, para obtener Condados y su id
+  // Filtrado, para obtener Condados y Id
   const counties = [];
   records.forEach((el) => {
     if (e.target.value === el.state_full) {
@@ -16,7 +16,6 @@ export default async function getCountiesRecluso(res, e) {
   });
 
   // Se crean las opciones para el "Dropdown list"
-
   // Mensaje para seleccionar opcion
   const $option = d.createElement('option');
   $option.textContent = '--Seleccione opcion';

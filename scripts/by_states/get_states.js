@@ -1,13 +1,13 @@
 const d = document;
 export default async function getStates(res) {
-  const $stateEstado = d.getElementById('state');
-  const $stateRecluso = d.getElementById('recluso__state');
+  const $stateEstado = d.getElementById('state'); // Estado (Busqueda por estado)
+  const $stateRecluso = d.getElementById('recluso__state'); // Estado (Busqueda por recluso)
 
-  const $fragment = d.createDocumentFragment();
+  const $fragment = d.createDocumentFragment(); // Fragmento para ser llenado
 
-  const records = await res.records;
+  const records = await res.records; // De la peticion, espera "records"
 
-  // Obtener nombre de Estados
+  // Obtener nombre de los Estados
   const states = [];
   records.forEach((el) => {
     states.push(el.state_full);
